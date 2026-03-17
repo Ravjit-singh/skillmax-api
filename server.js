@@ -146,6 +146,10 @@ app.delete('/api/skills/:id', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+// --- KEEP-ALIVE PING ROUTE ---
+app.get('/api/ping', (req, res) => {
+    res.status(200).json({ message: 'Render is awake! Database is sleeping.' });
+});
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`\n🚀 SkillMAX Server is running!`);
