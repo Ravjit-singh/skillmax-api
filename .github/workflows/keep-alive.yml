@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping DevStore OS API
-        run: curl -s https://devstore-ojn0.onrender.com > /dev/null
+        run: curl -s https://skillmax-api.onrender.com > /dev/null
