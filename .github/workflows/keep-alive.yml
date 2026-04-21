@@ -1,0 +1,14 @@
+name: Keep Render Server Alive
+
+on:
+  schedule:
+    # Runs every 14 minutes to prevent Render's 15-minute sleep cycle
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allows you to run it manually if needed
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping DevStore OS API
+        run: curl -s https://devstore-ojn0.onrender.com > /dev/null
